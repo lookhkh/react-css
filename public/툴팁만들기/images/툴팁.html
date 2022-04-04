@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+
+    *{
+        margin: 0;
+    }
+
+    .container{
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;    
+    }
+
+    .icon{
+        width: 125px;
+        height: 125px;
+        margin: 10px;
+        position: relative;
+    }
+
+    .icon span{
+        position: absolute;
+        background-color: black;
+        color: white;
+        width: 300px;
+        text-align: center;
+        top: -100px;
+        left: 50%;
+        transform: translateX(-50%);
+        border-radius: 5px;
+        padding: 10px;
+        opacity: 0;
+        transition: 1s;
+        visibility: hidden;
+
+    }
+
+    .icon span::after{
+        content: '';
+        position: absolute;
+        background-color: black;
+        width: 10px;
+        height: 10px;
+        transform: rotate(45deg) translateX(-50%);
+        bottom: -5px;
+        left: 50%;
+    
+    }
+
+    .icon:hover span{
+        opacity: 1;
+        visibility: visible;
+
+    }
+
+
+</style>
+<body>
+    <div class="container">
+        <div class="icon">
+            <img src="./icon-01.png" alt="1">
+            <span>
+                This HTML tutorial 
+                contains hundreds of HTML examples.
+            </span>
+        </div>
+
+         <div class="icon">
+            <img src="./icon-02.png" alt="1">
+            <span>
+                This CSS tutorial contains
+                 hundreds of CSS examples
+            </span>
+        </div>
+
+        <div class="icon">
+            <img src="./icon-03.png" alt="1">
+            <span>
+                AngularJS extends HTML 
+                with new attributes.
+            </span>
+        </div> 
+    </div>
+</body>
+</html>

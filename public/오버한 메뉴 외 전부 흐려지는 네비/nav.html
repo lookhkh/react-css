@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+          /* Google Web Font */
+    @import url('https://fonts.googleapis.com/css?family=Raleway&display=swap');
+    
+    /* Fontawesome 4.7 */
+    @import url('https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+    
+    body {
+      font-family: 'Raleway', sans-serif;
+      color: #222;
+      line-height: 1.5em;
+      font-weight: 300;
+      background-color: royalblue;
+      margin: 0;
+    }   
+    a {
+      color: #222;
+      text-decoration: none;
+    }
+
+    .gnb{
+        position: absolute;
+        top: 50%;
+        left: 50px;
+        transform: translateY(-50%);
+    }
+
+    .gnb a{
+        display: block;
+        font-size: 40px;
+        margin: 30px;
+        color: white;
+    }
+
+    .gnb:hover a{
+        opacity: 0.3;
+    }
+
+    .gnb a:hover{
+        opacity: 1;
+    }
+
+    .gnb a::before{
+        content:'\f105';
+        font-family: fontawesome;
+        margin-right: 10px;
+        opacity: 0;
+    }
+
+    .gnb a:hover::before{
+      
+        opacity: 1;
+    }
+
+    </style>
+</head>
+<body>
+    <div class="gnb">
+        <a>New Arrivals</a>
+        <a>Summer Collection</a>
+        <a>Winter Collection</a>
+        <a>Special Offers</a>
+        <a>Trends</a>
+
+    </div>
+</body>
+</html>
