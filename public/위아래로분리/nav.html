@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+    
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Brush+Script&display=swap');
+
+        button{
+            cursor: pointer;
+        }
+
+        *{
+            margin: 0;
+        }
+
+        body{
+            font-family: 'Nanum Brush Script',sans-serif ;
+        }
+
+        .container{
+            width: 100vw;
+            height: 100vh;
+            background-color: rgba(0, 0, 0, 0.74);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .box-container{
+            display: flex;
+        }
+
+        .box{
+            width: 300px;
+            height: 200px;
+            position: relative;
+            text-align: center;
+            box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.521);
+            transition: 0.5s linear;
+            margin: 10px;
+        }
+
+        .box div{
+            transition: 0.5s linear;
+            position: absolute;
+            width: 300px;
+            height: 200px;
+        }
+
+        .front{
+        
+            z-index: 2;
+            flex-direction: column;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .back{
+            background-color: white;
+            z-index: 1;
+            opacity: 0;
+            text-align: center;
+            border: none;
+        }
+
+        .back p {
+            padding: 30px 10px;
+        }
+
+        .back button{
+            border-radius: 5px;
+            padding: 5px 10px;
+            color: white;
+            background-color: rgba(0, 0, 255, 0.603);
+            border: none;
+        }
+
+      
+
+        .box:hover .front{
+            transform: translateY(-50%);
+            background-color: greenyellow;
+        }
+
+        .box:hover .front img{
+            animation: scaleUp 1s infinite;
+            animation-delay: 0.5s;
+
+        }
+
+
+        .box:hover .back{
+            opacity: 1;
+            transform: translateY(50%);
+        }
+
+        @keyframes scaleUp {
+            0%{
+                transform: scale(1);
+            }
+
+            50%{
+                transform: scale(1.2);
+            }
+
+            100%{
+                transform: scale(1);
+            }
+        }
+
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="box-container">
+            <div class="box">
+                <div class="front">
+                    <img src="images/space-01.png" alt="mars">
+                    <h2>Mars</h2>
+                </div>
+                <div class="back">
+                    <p>
+                        화성은 태양계의 네 번째 행성이다. 4개의 지구형 행성 중 하나다. 
+                        동양권에서는 불을 뜻하는 화(火)를 써서 화성이라 부르고 
+                        로마 신화의 전쟁의 신 마르스의 이름을 따 Mars라 부른다.
+                    </p>
+                    <button>Read More</button>
+                </div>
+            </div>
+
+            <div class="box">
+                <div class="front">
+                    <img src="images/space-02.png" alt="mars">
+                    <h2>Mars</h2>
+                </div>
+                <div class="back">
+                    <p>
+                        목성은 태양계의 다섯번째 행성이자 가장 큰 행성이다. 
+                        태양의 질량의 천분의 일배에 달하는 거대행성으로,
+                         태양계에 있는 다른 모든 행성들을 합한 질량의 약 2.5배에 이른다.
+                    </p>
+                    <button>Read More</button>
+                </div>
+            </div>
+
+            <div class="box">
+                <div class="front">
+                    <img src="images/space-03.png" alt="mars">
+                    <h2>Mars</h2>
+                </div>
+                <div class="back">
+                    <p>
+                        토성은 태양으로부터 여섯 번째에 있는 태양계의 행성으로, 
+                        진성(鎭星)으로도 불렀다. 
+                        토성은 태양계 내의 행성 중 목성에 이어 두 번째로 크며, 
+                        지름은 약 12만 킬로미터이다.
+                    </p>
+                    <button>Read More</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>

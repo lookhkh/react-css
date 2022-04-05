@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Raleway&display=swap');
+
+body {
+  font-family: 'Raleway', sans-serif;
+  color: #222;
+  line-height: 1.5em;
+  font-weight: 300;
+  margin: 0;
+  background-color: whitesmoke;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+a {
+  color: #222;
+  text-decoration: none;
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.app-ui{
+    width: 340px;
+    height: 640px;
+    transform: rotate(-30deg) skewX(30deg);
+    position: relative;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.295);
+    transition: 0.5s;
+    background-color: rgba(128, 128, 128, 0.377);
+    
+}
+
+.app-ui:hover{
+    box-sizing: -50px 100px 60px rgba(0,0,0,0.3);
+}
+
+.app-ui img{
+    position: absolute;
+    transition: 0.5s;
+}
+
+.app-ui:hover img:nth-child(1){
+    transform: translate(40px, -40px);
+    opacity: 0.4;
+}
+.app-ui:hover img:nth-child(2){
+    transform: translate(80px, -80px);
+    opacity: 0.6;
+}
+.app-ui:hover img:nth-child(3){
+    transform: translate(120px, -120px);
+    opacity: 0.8;
+
+}
+
+.app-ui:hover img:nth-child(4){
+    transform: translate(160px, -160px);
+}
+
+
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="app-ui">
+            <img src="./images/app-ui-01.jpg"/>
+            <img src="./images/app-ui-02.jpg"/>
+            <img src="./images/app-ui-03.jpg"/>
+            <img src="./images/app-ui-04.jpg"/>
+        </div>
+    </div>
+</body>
+</html>
