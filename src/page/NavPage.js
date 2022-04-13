@@ -1,5 +1,7 @@
 import useLoging from '../hooks/useLoging'
 import styled  from 'styled-components'
+import { Container } from '../commonTag/Common'
+
 
 const AtagCont = ({color, name})=>{
     return(
@@ -15,7 +17,7 @@ const NavPage = ()=>{
     useLoging("NavPage");
 
     return(
-        <Container>
+        <Container color="green">
             <MainBar>
                 <AtagCont color="red" name="메일"/>
                 <AtagCont color="green" name="카페"/>
@@ -26,17 +28,6 @@ const NavPage = ()=>{
     )
 }
 
-const Container = styled.div`
-
-    background-color: green;
-    width: 80%;
-    height: 80%;
-    margin: auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    
-`
 
 const MainBar = styled.nav`
     width: 90%;

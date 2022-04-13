@@ -4,7 +4,7 @@ import {  BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom'
 import Loading  from './component/header/css-practice/Loading'
 import BoxCircle from "./component/header/css-practice/BoxCircle";
 import NavPage from "./page/NavPage"
-
+import InputForm from "./page/InputForm";
 
 function App() {
 
@@ -16,10 +16,12 @@ function App() {
         <Link to="/">Home</Link>
         <Link to="/loading">Loading</Link>
         <Link to="/circle">Circle</Link>
+        <Link to="/form">Form</Link>
       </nav>
       <div className="root" style={{height:"95vh"}}>
         <Routes path="/" element={<App />}>
           <Route path="/" element={<NavPage />}/>
+          <Route path="/form" element={<InputForm/>}/>
           <Route path="loading" element={<Loading />} />
           <Route path="circle" element={<BoxCircle />} />
         </Routes>
