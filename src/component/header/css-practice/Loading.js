@@ -1,6 +1,6 @@
 import useLoging from '../../../hooks/useLoging'
-import styled, {keyframes}  from 'styled-components'
 import Containers from './CommonContainer'
+import styled, {keyframes}  from 'styled-components'
 
 const Loading = ()=>{
 
@@ -8,7 +8,7 @@ const Loading = ()=>{
 
     return(
         <>
-          <Containers>
+          <Containers style={{border:"none"}}>
               <Ball color="red" delay="0"/>
               <Ball color="yellow" delay="0.2s"/>
               <Ball color="blue" delay="0.4s"/>

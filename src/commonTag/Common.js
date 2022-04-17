@@ -10,6 +10,7 @@ export const Container = styled.div`
     justify-content: center;
     align-items: center;
     flex-direction: ${props=>props.direction};
+    border: ${props=>props.dev===true?"1px solid black":"none"};
     
 `
 
