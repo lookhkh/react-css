@@ -39,7 +39,7 @@ const InputForm = ()=>{
     }
 
     return (
-        <Container color="white" style={{flexDirection:"column"}}>
+        <Container color="white" direction="column">
             <InputWithIcon name="name" inputHanlder={inputHandler} icon={faVoicemail} placeHolderMsg="Name"/>
             <InputWithIcon name="phone" inputHanlder={inputHandler} icon={faMobilePhone} placeHolderMsg="Phone"/>
             <InputWithIcon name="msg" inputHanlder={inputHandler} icon={faVolumeUp} placeHolderMsg="HI"/>

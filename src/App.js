@@ -1,12 +1,16 @@
 import "./App.css";
 import Header from "./component/header/Header";
 import {  BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom'
-import Loading  from './component/header/css-practice/Loading'
-import BoxCircle from "./component/header/css-practice/BoxCircle";
-import NavPage from "./page/NavPage"
-import InputForm from "./page/InputForm";
+import React,{ Suspense } from 'react';
+import NavPage from './page/NavPage';
+
+const Loading = React.lazy(()=>import('./component/header/css-practice/Loading'))
+const BoxCircle = React.lazy(()=>import("./component/header/css-practice/BoxCircle"));
+const InputForm = React.lazy(()=>import("./page/InputForm"));
+const SkilCheckForm = React.lazy(()=>import("./page/SkilCheckForm"));
 
 function App() {
+
 
  
   return (
@@ -17,15 +21,19 @@ function App() {
         <Link to="/loading">Loading</Link>
         <Link to="/circle">Circle</Link>
         <Link to="/form">Form</Link>
+        <Link to="/skil-form">SkilForm</Link>
       </nav>
-      <div className="root" style={{height:"95vh"}}>
-        <Routes path="/" element={<App />}>
-          <Route path="/" element={<NavPage />}/>
-          <Route path="/form" element={<InputForm/>}/>
-          <Route path="loading" element={<Loading />} />
-          <Route path="circle" element={<BoxCircle />} />
-        </Routes>
-      </div>
+      <Suspense fallback={<div>...Loading</div>}>
+        <div className="root" style={{height:"95vh"}}>
+          <Routes path="/" element={<App />}>
+            <Route path="/" element={<NavPage />}/>
+            <Route path="/form" element={<InputForm/>}/>
+            <Route path="loading" element={<Loading />} />
+            <Route path="circle" element={<BoxCircle />} />
+            <Route path="/skil-form" element={<SkilCheckForm/>}/>
+          </Routes>
+        </div>
+      </Suspense>
     </>
     </Router>
   );
