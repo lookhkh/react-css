@@ -11,6 +11,8 @@ const InputForm = React.lazy(()=>import("./page/InputForm"));
 const SkilCheckForm = React.lazy(()=>import("./page/SkilCheckForm"));
 const Calculator = React.lazy(()=>import('./page/Calculator'))
 const Hamburger = React.lazy(()=>import("./page/Hamburger"))
+const Slider = React.lazy(()=>import("./page/Slider"));
+
 
 function App() {
 
@@ -27,6 +29,7 @@ function App() {
         <Link to="/calc">Calculator</Link>
         <Link to="/ham">Hamburger</Link>
         <Link to="/side">SideBard</Link>
+        <Link to="/slider">Slider</Link>
       </nav>
       <Suspense fallback={<Loading />}>
         <div className="root" style={{height:"95vh"}}>
@@ -39,6 +42,7 @@ function App() {
               <Route path="/calc" element={<Calculator/>}/>
               <Route path="/ham" element={<Hamburger/>}/>
               <Route path="/side" element={<SidePage/>}/>
+              <Route path="/slider" element={<Slider/>}/>
             </Routes>
           </ErrorBoundary>
         </div>

@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 import { useState, useCallback } from 'react'; 
-
 const SidePage = ()=>{
 
     const [clicekd,setClicekd] = useState(false);
@@ -25,7 +24,6 @@ export default SidePage;
 const MainContainer = styled.div`
     width: 100% ;
     height : 100%;
-    border: 1px solid black ;
     position: relative;
 `
 
