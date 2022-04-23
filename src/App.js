@@ -4,6 +4,7 @@ import {  BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom'
 import React,{ Suspense } from 'react';
 import NavPage from './page/NavPage';
 import Loading from './component/header/css-practice/Loading'
+import SidePage from "./page/SidePage";
 
 const BoxCircle = React.lazy(()=>import("./component/header/css-practice/BoxCircle"));
 const InputForm = React.lazy(()=>import("./page/InputForm"));
@@ -25,6 +26,7 @@ function App() {
         <Link to="/skil-form">SkilForm</Link>
         <Link to="/calc">Calculator</Link>
         <Link to="/ham">Hamburger</Link>
+        <Link to="/side">SideBard</Link>
       </nav>
       <Suspense fallback={<Loading />}>
         <div className="root" style={{height:"95vh"}}>
@@ -36,6 +38,7 @@ function App() {
               <Route path="/skil-form" element={<SkilCheckForm/>}/>
               <Route path="/calc" element={<Calculator/>}/>
               <Route path="/ham" element={<Hamburger/>}/>
+              <Route path="/side" element={<SidePage/>}/>
             </Routes>
           </ErrorBoundary>
         </div>
