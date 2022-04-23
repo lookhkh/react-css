@@ -1,11 +1,20 @@
-import styled from 'styled-components'
-
+import styled from 'styled-components';
+import { useState, useCallback } from 'react'; 
 
 const SidePage = ()=>{
+
+    const [clicekd,setClicekd] = useState(false);
+    const [msg , setMsg] = useState("x")
+
+    const clickHandler = useCallback(()=>{
+        setClicekd(!clicekd)
+        setMsg(!clicekd?"->":"x")
+    },[clicekd]);
+
     return(
         <MainContainer>
-            <SidePageWithButton>
-                <button>X</button>
+            <SidePageWithButton className={clicekd?"clicked":""}>
+                <button onClick={clickHandler}>{msg}</button>
             </SidePageWithButton>
         </MainContainer>
         )
@@ -24,9 +33,12 @@ const SidePageWithButton = styled.div`
     position: absolute ;
     right:0 ;
     height:100% ;
-    width: 30% ;
+    width: 0% ;
     background-color: black ;
-
+    transition:0.5s ;
+    &.clicked{
+        width:30% ;
+    }
     & button{
         box-sizing : border-box;
         display:flex ;
