@@ -6,7 +6,7 @@ const Calculator = ()=>{
 
     const [data,setData] = useState('');
     const [isNumber, setIsNumber] = useState(true);
-
+    const [hasError, setHasError] = useState(false);
     const clearIfNew = useCallback(()=>()=>{
         if(!isNumber){
             setData('');
@@ -21,9 +21,13 @@ const Calculator = ()=>{
     }
 
     const equlHandler = ()=>{
+        try{
         const result = eval(data);
         setData(result);
         setIsNumber(false);
+        }catch(err){
+            setHasError(true);
+        }
     }
 
     const keyboardHandler = (e)=>{
@@ -65,9 +69,10 @@ const Calculator = ()=>{
             </>
         )
     }
-
     return(
-        <Container>
+        hasError?
+        <div>Erorr</div>:
+        <Container>        
             <CalcContainer>
                 <InputContainer>
                     <InputOfCalc onKeyDown={e=>keyboardHandler(e)} value={data} readOnly={true}/>

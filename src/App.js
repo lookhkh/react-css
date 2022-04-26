@@ -1,16 +1,18 @@
 import "./App.css";
-import Header from "./component/header/Header";
+import ErrorBoundary from "./component/header/ErrorBoundaryForComponent";
 import {  BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom'
 import React,{ Suspense } from 'react';
 import NavPage from './page/NavPage';
 import Loading from './component/header/css-practice/Loading'
+import SidePage from "./page/SidePage";
 
 const BoxCircle = React.lazy(()=>import("./component/header/css-practice/BoxCircle"));
 const InputForm = React.lazy(()=>import("./page/InputForm"));
 const SkilCheckForm = React.lazy(()=>import("./page/SkilCheckForm"));
 const Calculator = React.lazy(()=>import('./page/Calculator'))
 const Testimonials = React.lazy(()=>import('./page/Testimonials'))
-
+const Hamburger = React.lazy(()=>import("./page/Hamburger"))
+const Slider = React.lazy(()=>import("./page/Slider"));
 function App() {
 
 
@@ -25,17 +27,25 @@ function App() {
         <Link to="/skil-form">SkilForm</Link>
         <Link to="/calc">Calculator</Link>
         <Link to="/test">Testimonials</Link>
+        <Link to="/ham">Hamburger</Link>
+        <Link to="/side">SideBard</Link>
+        <Link to="/slider">Slider</Link>
       </nav>
       <Suspense fallback={<Loading />}>
         <div className="root" style={{height:"95vh"}}>
-          <Routes path="/" element={<App />}>
-            <Route path="/" element={<NavPage />}/>
-            <Route path="/form" element={<InputForm/>}/>
-            <Route path="circle" element={<BoxCircle />} />
-            <Route path="/skil-form" element={<SkilCheckForm/>}/>
-            <Route path="/calc" element={<Calculator/>}/>
-            <Route path="/test" element={<Testimonials/>}/>
-          </Routes>
+          <ErrorBoundary >
+            <Routes path="/" element={<App />}>
+              <Route path="/" element={<NavPage />}/>
+              <Route path="/form" element={<InputForm/>}/>
+              <Route path="circle" element={<BoxCircle />} />
+              <Route path="/skil-form" element={<SkilCheckForm/>}/>
+              <Route path="/calc" element={<Calculator/>}/>
+              <Route path="/ham" element={<Hamburger/>}/>
+              <Route path="/side" element={<SidePage/>}/>
+              <Route path="/slider" element={<Slider/>}/>
+              <Route path="/test" element={<Testimonials/>}/>
+            </Routes>
+          </ErrorBoundary>
         </div>
       </Suspense>
     </>
