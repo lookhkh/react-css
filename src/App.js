@@ -9,7 +9,7 @@ const BoxCircle = React.lazy(()=>import("./component/header/css-practice/BoxCirc
 const InputForm = React.lazy(()=>import("./page/InputForm"));
 const SkilCheckForm = React.lazy(()=>import("./page/SkilCheckForm"));
 const Calculator = React.lazy(()=>import('./page/Calculator'))
-
+const Testimonials = React.lazy(()=>import('./page/Testimonials'))
 
 function App() {
 
@@ -24,6 +24,7 @@ function App() {
         <Link to="/form">Form</Link>
         <Link to="/skil-form">SkilForm</Link>
         <Link to="/calc">Calculator</Link>
+        <Link to="/test">Testimonials</Link>
       </nav>
       <Suspense fallback={<Loading />}>
         <div className="root" style={{height:"95vh"}}>
@@ -33,6 +34,7 @@ function App() {
             <Route path="circle" element={<BoxCircle />} />
             <Route path="/skil-form" element={<SkilCheckForm/>}/>
             <Route path="/calc" element={<Calculator/>}/>
+            <Route path="/test" element={<Testimonials/>}/>
           </Routes>
         </div>
       </Suspense>
